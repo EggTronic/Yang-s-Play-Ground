@@ -1,0 +1,4 @@
+- Callback
+- Promise
+- Async/Await
+- Async/Await with Fetch
