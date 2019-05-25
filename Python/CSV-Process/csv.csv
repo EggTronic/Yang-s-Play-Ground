@@ -1,0 +1,49 @@
+ID,Statistical Division or Subdivision,LGA,Offence category,Subcategory,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012
+1,Inner Sydney,Botany Bay,Homicide,Murder (a),1,0,0,1,2,1,0,1,0,0,1
+2,Inner Sydney,Botany Bay,Homicide,Attempted murder,0,0,0,0,0,0,1,0,0,0,1
+3,Inner Sydney,Botany Bay,Homicide,"Murder accessory, conspiracy",0,0,0,0,0,0,0,0,0,1,0
+4,Inner Sydney,Botany Bay,Homicide,Manslaughter (a),0,0,0,0,0,0,0,0,0,0,0
+5,Inner Sydney,Botany Bay,Assault,Domestic violence related assault,134,120,123,129,117,168,128,133,134,133,143
+6,Inner Sydney,Botany Bay,Assault,Non-domestic violence related assault,243,260,334,282,248,248,201,238,205,200,195
+7,Inner Sydney,Botany Bay,Assault,Assault Police,9,12,8,17,-10,14,-10,13,14,8,15
+8,Inner Sydney,Botany Bay,Sexual offences,Sexual assault,-10,14,20,18,12,11,13,8,18,18,19
+9,Inner Sydney,Botany Bay,Sexual offences,"Indecent assault, act of indecency and other sexual offences",25,25,30,24,20,31,23,22,33,31,25
+10,Inner Sydney,Botany Bay,Abduction and kidnapping,,ZERO,4,11,1,1,1,4,0,3,0,3
+11,Inner Sydney,Botany Bay,Robbery,Robbery without a weapon,29,39,31,36,39,38,35,24,24,40,21
+12,Inner Sydney,Botany Bay,Robbery,Robbery with a firearm,2,-10,9,3,4,-10,4,4,2,4,3
+13,Inner Sydney,Botany Bay,Robbery,Robbery with a weapon not a firearm,18,14,11,18,25,19,14,5,9,15,9
+14,Inner Sydney,Botany Bay,Blackmail and extortion,,0,0,0,1,2,NULL,1,1,2,0,0
+15,Inner Sydney,Botany Bay,"Harassment, threatening behaviour and private nuisance",,117,178,173,146,103,112,108,129,139,123,92
+16,Inner Sydney,Botany Bay,Other offences against the person,,11,6,4,19,8,-10,-10,11,8,4,4
+17,Inner Sydney,Botany Bay,Theft,Break and enter dwelling,276,235,210,242,181,213,161,134,161,181,139
+18,Inner Sydney,Botany Bay,Theft,Break and enter non-dwelling,255,184,153,156,142,107,73,90,66,52,33
+19,Inner Sydney,Botany Bay,Theft,Receiving or handling stolen goods,65,74,70,48,41,59,68,42,46,37,54
+20,Inner Sydney,Botany Bay,Theft,Motor vehicle theft,333,238,276,245,212,271,196,135,189,166,151
+21,Inner Sydney,Botany Bay,Theft,Steal from motor vehicle,429,354,358,295,268,487,435,377,288,320,243
+22,Inner Sydney,Botany Bay,Theft,Steal from retail store,259,349,303,274,190,242,276,364,430,248,285
+23,Inner Sydney,Botany Bay,Theft,Steal from dwelling,112,133,97,94,113,116,95,94,86,91,93
+24,Inner Sydney,Botany Bay,Theft,Steal from person,219,254,231,-213,185,170,130,132,144,148,116
+25,Inner Sydney,Botany Bay,Theft,Stock theft,0,0,0,1,0,0,0,0,0,0,0
+26,Inner Sydney,Botany Bay,Theft,Fraud,407,380,428,381,361,394,558,424,509,474,617
+27,Inner Sydney,Botany Bay,Theft,Other theft,620,658,634,573,567,562,563,491,432,411,370
+28,Inner Sydney,Botany Bay,Arson,,15,14,27,24,31,20,16,8,12,13,16
+29,Inner Sydney,Botany Bay,Malicious damage to property,,524,482,500,534,633,635,686,576,525,579,456
+30,Inner Sydney,Botany Bay,Drug offences,Possession and/or use of cocaine,0,1,4,3,2,1,1,6,5,0,4
+31,Inner Sydney,Botany Bay,Drug offences,Possession and/or use of narcotics,3,1,3,2,5,6,3,5,1,3,7
+32,Inner Sydney,Botany Bay,Drug offences,Possession and/or use of cannabis,49,44,-56,44,30,75,69,91,110,58,82
+33,Inner Sydney,Botany Bay,Drug offences,Possession and/or use of amphetamines,11,17,6,8,7,22,19,14,15,32,32
+34,Inner Sydney,Botany Bay,Drug offences,Possession and/or use of ecstasy,2,4,2,4,3,3,7,7,4,2,-10
+35,Inner Sydney,Botany Bay,Drug offences,Possession and/or use of other drugs,2,3,5,4,2,13,12,7,31,13,23
+36,Inner Sydney,Botany Bay,Drug offences,"Dealing, trafficking in cocaine",0,0,0,3,0,0,0,0,4,2,6
+37,Inner Sydney,Botany Bay,Drug offences,"Dealing, trafficking in narcotics",1,2,1,2,1,1,1,NULL,1,3,20
+38,Inner Sydney,Botany Bay,Drug offences,"Dealing, trafficking in cannabis",2,4,2,3,1,1,1,3,0,2,3
+39,Inner Sydney,Botany Bay,Drug offences,"Dealing, trafficking in amphetamines",1,2,2,2,3,4,4,8,5,5,8
+40,Inner Sydney,Botany Bay,Drug offences,"Dealing, trafficking in ecstasy",5,5,2,0,3,0,1,1,0,1,0
+41,Inner Sydney,Botany Bay,Drug offences,"Dealing, trafficking in other drugs",0,0,1,0,0,0,1,0,3,1,1
+42,Inner Sydney,Botany Bay,Drug offences,Cultivating cannabis,1,6,2,2,ZERO,3,2,3,2,3,1
+43,Inner Sydney,Botany Bay,Drug offences,Manufacture drug,0,0,1,1,0,0,3,0,0,2,0
+44,Inner Sydney,Botany Bay,Drug offences,Importing drugs,17,22,30,24,13,5,8,7,11,11,19
+45,Inner Sydney,Botany Bay,Drug offences,Other drug offences,8,20,18,21,14,38,-51,-50,64,41,38
+46,Inner Sydney,Botany Bay,Prohibited and regulated weapons offences,,57,63,62,66,47,68,60,52,79,51,30
+47,Inner Sydney,Botany Bay,Disorderly conduct,MUC-SUCK,36,39,54,57,41,46,57,36,34,26,34
+48,Inner Sydney,Botany Bay,Disorderly conduct,Offensive conduct,15,9,14,16,13,16,17,24,23,-10,21

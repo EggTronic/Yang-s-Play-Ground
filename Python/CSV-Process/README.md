@@ -1,0 +1,2 @@
+- Change negative values to positive values
+- Change 'ZERO' and 'NULL' to null
