@@ -16,3 +16,4 @@ Where I play what I am intrested in.
   - [x] JinJa2-Template Engine
   - [x] Lasagne-Machine Learning Library
   - [x] Flask
+  - [x] Python-CSV write/read
