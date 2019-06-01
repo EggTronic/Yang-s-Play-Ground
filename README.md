@@ -1,5 +1,5 @@
 ```
-Where I play what I am intrested in.
+Where I play what I am interested in.
 ```
 ## To do list
 - Current
