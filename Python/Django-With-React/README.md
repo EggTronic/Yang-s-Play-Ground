@@ -1,4 +1,5 @@
 ## Notes
+### Django
 1. Install Python Virtual Environment
    ```
    $ pip install pipenv
@@ -42,4 +43,35 @@
 10. Run Server
     ```
     $ python manage.py run runserver
+    ```
+
+### React
+1. ```
+   $ npm init -y
+   ```
+2. Webpack
+   ```
+   $ npm install -D webpack webpack-cli
+   ```
+3. Babel
+   ```
+   $ npm install i -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties
+   ```
+4. React
+   ```
+   $ npm i react react-dom prop-types
+   ```
+5. Create .babelrc
+6. Create webpack.config.js
+7. Add dev/build script to package.json
+8. Add index.js/main.js/App.js
+9. Add frontend app to Django settings
+10. Create url for frontend and add to urls.py
+11. Build for dev
+    ```
+    $ npm run dev
+    ```
+12. Start server
+    ```
+    $ python manage.py runserver
     ```
