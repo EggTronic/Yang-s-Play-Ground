@@ -4,7 +4,7 @@
   "description": "1. Install Python Virtual Environment\r    ```\r    $ pip install pipenv\r    ```\r 2. Launch Python Virtual Environment\r    ```\r    $ pipenv shell\r    ```\r 3. Install dependencies\r    ```\r    $ pipenv install django djangorestframework django-rest-knox\r    ```\r 4. Create Django Projects\r    ```\r    $ django-admin startproject <name>\r    $ cd ./<name>\r    ```\r 5. Create Django App\r    ```\r    $ python manage.py startapp <app_name>\r    ```\r    ```\r    Add <app_name> and 'rest-framework' to settings.py\r    ```\r    ```\r    Create Database in models.py with",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/static/frontend/main.js",
+    "dev": "webpack --mode development --watch ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/static/frontend/main.js",
     "build": "webpack --mode production ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/static/frontend/main.js"
   },
   "keywords": [],
