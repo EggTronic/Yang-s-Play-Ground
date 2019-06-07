@@ -1,18 +1,11 @@
 // This code is sponsored by http://algoexpert.io/techlead
 // by http://youtube.com/techlead
+import firebaseConfig from '../config';
 
 $(function () {
 
   // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyAtm45mJ19AQ4QtywK26H0dqA1JGIymjH0",
-    authDomain: "maze-python-84e81.firebaseapp.com",
-    databaseURL: "https://maze-python-84e81.firebaseio.com",
-    projectId: "maze-python-84e81",
-    storageBucket: "maze-python-84e81.appspot.com",
-    messagingSenderId: "48367028259",
-    appId: "1:48367028259:web:34bc73812ad05022"
-  };
+  const firebaseConfig = firebaseConfig;
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
