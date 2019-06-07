@@ -15,3 +15,4 @@
   - Back-End
     - [x] Express.js
     - [x] FeathersJS
+    - [ ] Firebase

@@ -1,0 +1,76 @@
+<!--
+This code is sponsored by http://algoexpert.io/techlead, for over 70 coding interview videos.
+Built by http://youtube.com/techlead
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+
+<!-- Source code here -->
+<script src="maze.js"></script>
+<script src="app.js"></script>
+
+<body>
+  <style>
+    body {
+      padding: 8px;
+      font-family: Helvetica;
+    }
+
+    .player {
+      border: 1px #000 solid;
+      border-radius: 100px;
+      position: absolute;
+    }
+
+    #buttons {
+      touch-action: manipulation;
+      padding: 16px;
+    }
+
+    .button {
+      width: 60px;
+      height: 60px
+    }
+  </style>
+  <title>Maze Real-Time with Firebase Demo</title>
+  <B> Maze Real-Time with Firebase Demo</B><BR>
+  Use buttons (or arrow-keys) to move to the bottom-right.
+  <BR><BR>
+
+  <div style='position:absolute' id=players>
+  </div>
+  <table>
+    <TR>
+      <TD>
+        <canvas id="canvas" style="border:1px solid #000000;">
+        </canvas>
+        <div id=buttons>
+          <center>
+            <table>
+              <TR>
+                <TD></td>
+                <TD>
+                  <center> <input type=button class=button value="Up" onclick="goUp()"></center>
+                </td>
+                <TD>
+                </td>
+              </tr>
+              <TR>
+                <TD>
+                  <input type=button class=button value="Left" onclick="goLeft()"></td>
+                <TD>
+                  <input type=button class=button value="Down" onclick="goDown()">
+                </td>
+                <TD>
+                  <input type=button class=button value="Right" onclick="goRight()">
+                </td>
+              </tr>
+            </table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>

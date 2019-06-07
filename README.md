@@ -5,6 +5,7 @@ Where I play what I am interested in.
 - Current
   - [ ] Django
   - [ ] React
+  - [ ] Firebase
   - [ ] Css Animation
 
 ## Done list
