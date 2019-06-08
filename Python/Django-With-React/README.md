@@ -42,7 +42,7 @@
 9. Setup URL (urls.py)
 10. Run Server
     ```
-    $ python manage.py run runserver
+    $ python manage.py runserver
     ```
 
 ### React
@@ -74,4 +74,8 @@
 12. Start server
     ```
     $ python manage.py runserver
+    ```
+13. Authentication
+    ```
+    $ npm i redux react-redux redux-thunk redux-devtools-extension
     ```
