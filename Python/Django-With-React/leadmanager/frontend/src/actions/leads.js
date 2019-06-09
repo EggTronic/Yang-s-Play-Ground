@@ -10,5 +10,5 @@ export const getLeads = () => dispatch => {
                 type: GET_LEADS,
                 payload: res.data
             });
-        }).catch(err = console.log(err));
+        }).catch(err => console.log(err));
 };
