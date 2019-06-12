@@ -5,10 +5,10 @@ Where I play what I am interested in.
 - Current
   - [ ] Django
   - [ ] React
-  - [ ] Firebase
   - [ ] Css Animation
 
 ## Done list
+  - [x] Firebase
   - [x] Aysnc
   - [x] Axios/Fetch/Ajax/HTTP
   - [x] Vue.js
