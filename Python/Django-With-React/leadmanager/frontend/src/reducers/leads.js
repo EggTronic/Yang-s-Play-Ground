@@ -6,8 +6,13 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case GET_LEADS:
+            return {
+                ...state,
+                leads: action.payload
+            };
+        case ADD_LEADS:
             return {
                 ...state,
                 leads: action.payload
@@ -16,7 +21,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 leads: state.leads.filter(lead => lead.id !==
-                action.payload)
+                    action.payload)
             };
         default:
             return state;
