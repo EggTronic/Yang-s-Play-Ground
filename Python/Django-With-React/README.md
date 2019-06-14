@@ -79,3 +79,7 @@
     ```
     $ npm i redux react-redux redux-thunk redux-devtools-extension
     ```
+14. Alert Component
+    ```
+    $ npm i react-alert react-alert-template-basic react-transition-group
+    ```
