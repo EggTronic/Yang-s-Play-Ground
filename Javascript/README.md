@@ -2,6 +2,8 @@
 - Basics
   - [x] Aysnc
   - [x] Axios/Fetch/Ajax/HTTP
+  - [x] Sass
+  - [x] Css Advance 
   - [ ] Event
   - [ ] DOM/Window
   - [ ] Animation
