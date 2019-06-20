@@ -4,6 +4,7 @@
   - [x] Axios/Fetch/Ajax/HTTP
   - [x] Sass
   - [x] Css Advance 
+  - [x] Paritical Animation 
   - [ ] Event
   - [ ] DOM/Window
   - [ ] Animation
