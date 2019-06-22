@@ -4,7 +4,7 @@ Where I play what I am interested in.
 ## To do list
 - Current
   - [ ] Django
-  - [ ] React
+  - [ ] React-Redux
 
 
 ## Done list
