@@ -1,5 +1,5 @@
 ```
-Where I play what I am interested in.
+Where I play what I am interested in. Where I practice what I should practice.
 ```
 ## To do list
   - [ ] Hadoop Source Code
