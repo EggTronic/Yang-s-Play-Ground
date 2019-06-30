@@ -2,10 +2,16 @@
 Where I play what I am interested in.
 ```
 ## To do list
-- Current
-  - [ ] Django
-  - [ ] React-Redux
+  - [ ] Hadoop Source Code
+  - [ ] Spark Source Code
+  - [ ] *Vue Source Code
+  - [ ] *React Source Code
 
+
+## On Going list
+  - LeetCode-Python
+  - Django
+  - React/Redux
 
 ## Done list
   - [x] Css Advance

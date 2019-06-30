@@ -1,6 +1,6 @@
 ## To do list
 - Basics
-  - [ ] 
+  - [ ] LeetCode - On Going
 
 <br/>
 
