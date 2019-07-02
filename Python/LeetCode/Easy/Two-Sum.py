@@ -33,3 +33,24 @@ class Solution:
             complement = target - nums[i]
             if complement in numsDict.keys() and i != numsDict.get(complement):
                 return [i, numsDict.get(complement)]
+
+
+"""
+Solution 3
+Time: O(n)
+Space: O(n)
+
+Notes:
+uses even less time by dynamically add nums to Dict when there is no complement
+less memory required than solution 2
+"""
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        numsDict = {}
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in numsDict.keys():
+                return [i, numsDict.get(complement)]
+            numsDict[nums[i]] = i
