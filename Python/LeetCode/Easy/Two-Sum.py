@@ -6,51 +6,10 @@ Space: O(n)
 Notes:
 xrange uses less memory than range and much faster than range
 """
-
-
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+class Solution(object):
+    def twoSum(self, nums, target):
         for i in xrange(len(nums)-1):
-            for j in xrange(i+1, len(nums)):
+            for j in xrange(i+1,len(nums)):
                 if nums[i] + nums[j] == target:
                     return [i, j]
-
-
-"""
-Solution 2
-Time: O(n)
-Space: O(n)
-
-Notes:
-dict uses far less time to search the match, but requires more memory space
-"""
-
-
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        numsDict = {nums[i]: i for i in range(len(nums))}
-        for i in range(len(nums)):
-            complement = target - nums[i]
-            if complement in numsDict.keys() and i != numsDict.get(complement):
-                return [i, numsDict.get(complement)]
-
-
-"""
-Solution 3
-Time: O(n)
-Space: O(n)
-
-Notes:
-uses even less time by dynamically add nums to Dict when there is no complement
-less memory required than solution 2
-"""
-
-
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        numsDict = {}
-        for i in range(len(nums)):
-            complement = target - nums[i]
-            if complement in numsDict.keys():
-                return [i, numsDict.get(complement)]
-            numsDict[nums[i]] = i
+    
