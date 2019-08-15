@@ -74,3 +74,10 @@ Fast and less code to implement
 
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        left, right = []
+
+
+
+1->2 n=3 pc->next=null pr=2 pc=3
+2->3 n=
+3->4
