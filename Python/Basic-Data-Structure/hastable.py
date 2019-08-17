@@ -9,19 +9,24 @@ class Node(object):
     def get_data(self):
         return self.data
 
+    def get_next(self):
+        return self.next
+
     def data_equals(self, data):
         return self.data == data
 
 
 class HashTable(object):
+    num = 10
+
     def __init__(self):
-        self.value = [None] * num
+        self.value = [None] * self.num
 
     def insert(self, data):
         if self.search(data):
             return True
 
-        i = data % num
+        i = data % self.num
         node = Node(data)
         if self.value[i] is None:
             self.value[i] = node
@@ -34,7 +39,7 @@ class HashTable(object):
             return True
 
     def search(self, data):
-        i = data % num
+        i = data % self.num
         if self.value[i] is None:
             return False
         else:
@@ -48,7 +53,7 @@ class HashTable(object):
 
     def delete(self, data):
         if self.search(data):
-            i = data % num
+            i = data % self.num
             if self.value[i].data_equals(data):
                 self.value[i] = self.value[i].get_next()
             else:
@@ -63,17 +68,17 @@ class HashTable(object):
     def echo(self):
         i = 0
         for head in self.value:
-            print str(i) + ':\t',
+            print(str(i) + ':\t')
             if head is None:
-                print None,
+                print(None)
             else:
                 while head is not None:
-                    print str(head.get_data()) + ' ->',
+                    print(str(head.get_data()) + ' ->')
                     head = head.get_next()
-                print None,
-            print ''
+                print(None)
+            print('')
             i += 1
-        print ''
+        print('')
 
 
 if __name__ == '__main__':
