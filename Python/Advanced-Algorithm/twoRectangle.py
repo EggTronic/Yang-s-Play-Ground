@@ -33,7 +33,7 @@ def intersection(rec1, rec2):
         maxy2 = rec2[2]
 
     # check x,y boundary
-    if minx1 > maxx2 or miny1 > maxy2:
+    if minx1 > maxx2 or maxx1 < minx2 or miny1 > maxy2 or maxy1 < miny2:
         return False
 
     # get rectangle value
@@ -61,7 +61,7 @@ def intersection(rec1, rec2):
 
 
 if __name__ == '__main__':
-    rec1 = [1, 2, 3, 4]
+    rec1 = [1, 3, 3, 5]
     rec2 = [3, 4, 5, 6]
     area = intersection(rec1, rec2)
     print(area)
