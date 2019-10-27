@@ -59,5 +59,19 @@ BinarySearchTree.prototype.LMR = function () {
   return result;
 }
 
+// 前序遍历
+BinarySearchTree.prototype.LMR = function () {
+  let temp = this.root;
+  let stack = [];
+  let result = [];
+  stack.push(node)
+  while (stack.length > 0 || temp) {
+    if (temp) {
+      result.push(temp.val);
+      if (temp.right) stack.push(temp.right) 
+    }
+  }
+}
+
 
 Start();
