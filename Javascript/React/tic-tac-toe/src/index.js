@@ -67,7 +67,12 @@ class Game extends React.Component {
         squares: Array(9).fill(null)
       }],
       turn: true,
-      stepNumber: 0
+      stepNumber: 0,
+      location: {
+        x: null,
+        y: null
+      },
+      currentIndex: null
     };  
   }
 
@@ -97,6 +102,8 @@ class Game extends React.Component {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length-1];
     const squares = current.squares.slice();
+    const x = i % 3 + 1;
+    const y = Math.floor(i/3) + 1; 
     if (this.calculateWinner(squares) || squares[i]) {
       return;
     }
@@ -106,14 +113,19 @@ class Game extends React.Component {
         squares: squares
       }]),
       stepNumber: history.length,
-      turn: !this.state.turn
+      turn: !this.state.turn,
+      location: {
+        x: x,
+        y: y
+      }
     });
   }
 
   jumpTo(move) {
     this.setState({
       stepNumber: move,
-      turn: (move % 2) === 0
+      turn: (move % 2) === 0,
+      currentIndex: move
     })
   }
 
@@ -127,17 +139,22 @@ class Game extends React.Component {
         'Go to move #' + move :
         'Go to game start';
       return (
-        <li key = {move}>
+        <li key = {move}
+            className = {this.state.currentIndex === move ? 'active' : ''}
+        >
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
     
     let status;
+    let location;
     if (winner) {
       status = 'Winner: ' + winner;
+      location = '';
     } else {
       status = 'Next player: ' + (this.state.turn ? 'X' : 'O');
+      location = `Location: (x: ${this.state.location.x}, y: ${this.state.location.y})`;
     }
  
     return (
@@ -150,6 +167,7 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
         <div>{status}</div>
+        <div>{location}</div>
         <ol>{moves}</ol>
         </div>
       </div>
