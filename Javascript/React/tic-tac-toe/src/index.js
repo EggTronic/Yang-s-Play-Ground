@@ -117,7 +117,8 @@ class Game extends React.Component {
       location: {
         x: x,
         y: y
-      }
+      },
+      order: false
     });
   }
 
@@ -126,6 +127,13 @@ class Game extends React.Component {
       stepNumber: move,
       turn: (move % 2) === 0,
       currentIndex: move
+    })
+  }
+
+  handleOrder() {
+    const order = this.state.order;
+    this.setState({
+      order: !order
     })
   }
 
@@ -146,6 +154,10 @@ class Game extends React.Component {
         </li>
       );
     });
+
+    if (this.state.order) {
+      moves.reverse();
+    }
     
     let status;
     let location;
@@ -160,15 +172,18 @@ class Game extends React.Component {
     return (
       <div className="game">
         <div className="game-board">
-        <Board 
-          squares={current.squares}
-          onClick={(i) => this.handelClick(i)}
-        />
+          <Board 
+            squares={current.squares}
+            onClick={(i) => this.handelClick(i)}
+          />
         </div>
         <div className="game-info">
-        <div>{status}</div>
-        <div>{location}</div>
-        <ol>{moves}</ol>
+          <div>{status}</div>
+          <div>{location}</div>
+          <ol>{moves}</ol>
+          <button 
+            onClick={() => this.handleOrder()}
+          > Order </button>
         </div>
       </div>
     );
