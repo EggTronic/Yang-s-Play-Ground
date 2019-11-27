@@ -1,6 +1,4 @@
-finalResult = []; 
-
-function Permutation2(str, length, dp) {
+function Permutation2(str, length, dp, finalResult) {
   let arr = str.split('').sort();
   let result = [];
 
@@ -21,7 +19,7 @@ function Permutation2(str, length, dp) {
     let temp = [];
     let arrAfter = temp.concat(arr.slice(0, index), arr.slice(index + 1, arr.length)).join('');
     if (arrAfter.length > 0) {
-        let permutationAfter = Permutation2(arrAfter, length);
+        let permutationAfter = Permutation2(arrAfter, length, dp, finalResult);
         permutationAfter.forEach((str) => {
           let bind = char + str;
           if (bind.length === length && !dp[bind]) {
@@ -37,7 +35,8 @@ function Permutation2(str, length, dp) {
 }
 
 function Permutation(str) {
-    Permutation2(str, str.length, {});
+    let finalResult = [];
+    Permutation2(str, str.length, {}, finalResult);
     return finalResult;
 }
 
