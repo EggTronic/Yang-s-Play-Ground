@@ -1,4 +1,4 @@
-function Permutation2(str, length, dp, finalResult) {
+function PermutationHelper(str, length, dp, finalResult) {
   let arr = str.split('').sort();
   let result = [];
 
@@ -34,7 +34,7 @@ function Permutation2(str, length, dp, finalResult) {
   return result;
 }
 
-function Permutation(str) {
+function PermutationHelper(str) {
     let finalResult = [];
     Permutation2(str, str.length, {}, finalResult);
     return finalResult;
