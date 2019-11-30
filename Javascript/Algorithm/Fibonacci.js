@@ -34,7 +34,7 @@ function Fibonacci2(n) {
     return f;
 }
 
-
+// 1 1 2 3 5
 console.log(Fibonacci(10));
 console.log(Fibonacci2(10));
 

@@ -21,4 +21,4 @@ function split(arr) {
     return merge(split(left), split(right));
 }
 
-console.log(split(arr));
+console.log(split(arr));    
