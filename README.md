@@ -11,9 +11,11 @@ Where I play what I am interested in. Where I practice what I should practice.
 ## On Going list
   - LeetCode-Python
   - Django
-  - React/Redux
+  - rxjs
+  - webpack
 
 ## Done list
+  - [x] React/Redux
   - [x] Css Advance
   - [x] Sass
   - [x] Firebase
