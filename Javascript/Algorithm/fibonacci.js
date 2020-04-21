@@ -34,6 +34,17 @@ function Fibonacci2(n) {
     return f;
 }
 
-
+// 1 1 2 3 5
 console.log(Fibonacci(10));
 console.log(Fibonacci2(10));
+
+let f3 = (n) => {
+    let i = 0, j = 1;
+    while(--n) {
+        j = i + j;
+        i = j - i;
+    }
+    return j;
+}
+
+console.log(f3(10));

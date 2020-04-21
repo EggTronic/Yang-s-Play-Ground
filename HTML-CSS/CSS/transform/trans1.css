@@ -1,0 +1,28 @@
+.translate {
+    transform: all 1s ease-in-out;
+    /*
+    transform: none|
+               translate(x,y)| 2d 转换
+               translate3d(x,y,z)| 3d转换
+               scale(x,y)| 2d 缩放
+               scale3d(x,y,z)| 3d 缩放
+               rotate(n deg)| 选装
+               skew(x deg,y deg)| 2d 倾斜
+               perspective(n)| 透视图
+    */
+    width: 100px;
+    height: 50px;
+    background-color: red;
+}
+
+.trans1:hover {
+    width: 200px;
+    background-color: blue;
+}
+
+.trans1:active {
+    width: 400px;
+    background-color: green;
+}
+
+.trans1:focus {}
