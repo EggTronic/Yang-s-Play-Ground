@@ -1,16 +1,15 @@
 ```
-Where I play what I am interested in. Where I practice what I should practice.
+This repo works as an incubator for me to start intresting projects.
+I also uses it to do some programming practices.
 ```
 ## To do list
-  - [ ] Hadoop Source Code
-  - [ ] Spark Source Code
-  - [ ] *Vue Source Code
-  - [ ] *React Source Code
+  - [ ] React Source Code
+  - [ ] RXJS Source Code
 
 
 ## On Going list
-  - LeetCode-Python
-  - Django
+  - AudioVisualizer
+  - AudioVisualizer-React
   - rxjs
   - webpack
 
