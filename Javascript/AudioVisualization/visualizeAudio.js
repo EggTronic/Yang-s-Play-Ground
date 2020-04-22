@@ -81,7 +81,6 @@ class AudioVisualizer {
         this.sourceNode.loop = this.loop;
         this.sourceNode.connect(this.analyser);
         this.sourceNode.connect(this.ctx.destination);
-
         this.sourceNode.onended = function () {
             clearInterval(INTERVAL);
             this.sourceNode.disconnect();
@@ -162,16 +161,16 @@ class AudioVisualizer {
      */
     playSound = (buffer) => {
         this.isPlaying = true;
-
         if (this.ctx.state === 'suspended') {
-            return this.ctx.resume();
+            this.ctx.resume();
+            this.renderFrame();
+        } else {
+            this.sourceNode.buffer = buffer;
+            this.sourceNode.start(0);
+            this.resetTimer();
+            this.startTimer();
+            this.renderFrame();
         }
-
-        this.sourceNode.buffer = buffer;
-        this.sourceNode.start(0);
-        this.resetTimer();
-        this.startTimer();
-        this.renderFrame();
     };
 
     /**
@@ -224,14 +223,41 @@ class AudioVisualizer {
      * Render frame on canvas.
      */
     renderFrame = () => {
-        requestAnimationFrame(this.renderFrame.bind(this));
+        if (this.isPlaying) {
+            requestAnimationFrame(this.renderFrame.bind(this));
+        }
+        
         this.analyser.getByteFrequencyData(this.frequencyData);
 
         this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.renderTime();
+        this.renderProgressbar();
         this.renderText();
         this.renderByStyleType();
+    };
+
+    renderProgressbar = () => {
+        let cx = this.canvas.width / 2;
+        let cy = this.canvas.height / 2;
+        let correction = 10;
+        let curDuration = this.minutes * 60 + parseInt(this.seconds);
+        let arcPercent = curDuration/this.sourceNode.buffer.duration
+
+        this.canvasCtx.strokeStyle = this.barColor;
+        this.canvasCtx.lineWidth = '10';
+
+        this.canvasCtx.beginPath();
+        this.canvasCtx.arc(cx + correction, cy, 100, 0.5 * Math.PI, 0.5 * Math.PI + 2*Math.PI);
+        this.canvasCtx.globalAlpha = 0.1;
+        this.canvasCtx.stroke();  
+        this.canvasCtx.closePath();
+
+        this.canvasCtx.beginPath();
+        this.canvasCtx.arc(cx + correction, cy, 100, 0.5 * Math.PI, 0.5 * Math.PI + arcPercent*2*Math.PI);
+        this.canvasCtx.globalAlpha = 1;
+        this.canvasCtx.stroke();  
+        this.canvasCtx.closePath();
     };
 
     /**
