@@ -242,7 +242,7 @@ class AudioVisualizer {
         let cy = this.canvas.height / 2;
         let correction = 10;
         let curDuration = this.minutes * 60 + parseInt(this.seconds);
-        let arcPercent = curDuration/this.sourceNode.buffer.duration
+        let arcPercent = curDuration/this.sourceNode.buffer.duration;
 
         this.canvasCtx.strokeStyle = this.barColor;
         this.canvasCtx.lineWidth = '10';
