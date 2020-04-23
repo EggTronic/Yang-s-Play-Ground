@@ -25,6 +25,7 @@ class AudioVisualizer {
         this.shadowColor = cfg.shadowColor || '#ffffff';
         this.font = cfg.font || ['12px', 'Helvetica'];
         this.gradient = null;
+        this.interval = null;
     }
 
     init = () => {
@@ -82,11 +83,19 @@ class AudioVisualizer {
         this.sourceNode.connect(this.analyser);
         this.sourceNode.connect(this.ctx.destination);
         this.sourceNode.onended = function () {
-            clearInterval(INTERVAL);
-            this.sourceNode.disconnect();
-            this.resetTimer();
-            this.isPlaying = false;
-            this.sourceNode = this.ctx.createBufferSource();
+            setTimeout(
+                function () {
+                    clearInterval(this.interval);
+                    
+                    this.sourceNode.disconnect();
+                    this.resetTimer();
+                    this.isPlaying = false;
+                    this.sourceNode = this.ctx.createBufferSource();
+                    this.sourceNode.connect(this.analyser);
+                    this.sourceNode.connect(this.ctx.destination);
+                }.bind(this)
+                , 100)
+
         }.bind(this);
     };
 
@@ -187,7 +196,7 @@ class AudioVisualizer {
      * Start playing timer.
      */
     startTimer = () => {
-        AudioVisualizer.INTERVAL = setInterval(() => {
+        this.interval = setInterval(() => {
             if (this.isPlaying) {
                 let now = new Date(this.duration);
                 let min = now.getHours();
@@ -204,7 +213,7 @@ class AudioVisualizer {
      * Reset time counter.
      */
     resetTimer = () => {
-        let time =  new Date(0, 0);
+        let time = new Date(0, 0);
         this.duration = time.getTime();
     };
 
@@ -226,7 +235,7 @@ class AudioVisualizer {
         if (this.isPlaying) {
             requestAnimationFrame(this.renderFrame.bind(this));
         }
-        
+
         this.analyser.getByteFrequencyData(this.frequencyData);
 
         this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -242,22 +251,25 @@ class AudioVisualizer {
         let cy = this.canvas.height / 2;
         let correction = 10;
         let curDuration = this.minutes * 60 + parseInt(this.seconds);
-        let arcPercent = curDuration/this.sourceNode.buffer.duration;
 
+        let arcPercent;
         this.canvasCtx.strokeStyle = this.barColor;
         this.canvasCtx.lineWidth = '10';
 
-        this.canvasCtx.beginPath();
-        this.canvasCtx.arc(cx + correction, cy, 100, 0.5 * Math.PI, 0.5 * Math.PI + 2*Math.PI);
-        this.canvasCtx.globalAlpha = 0.1;
-        this.canvasCtx.stroke();  
-        this.canvasCtx.closePath();
+        if (this.sourceNode.buffer) {
+            arcPercent = curDuration / this.sourceNode.buffer.duration;
+            this.canvasCtx.beginPath();
+            this.canvasCtx.arc(cx + correction, cy, 100, 0.5 * Math.PI, 0.5 * Math.PI + arcPercent * 2 * Math.PI);
+            this.canvasCtx.stroke();
+            this.canvasCtx.closePath();
+        }
 
         this.canvasCtx.beginPath();
-        this.canvasCtx.arc(cx + correction, cy, 100, 0.5 * Math.PI, 0.5 * Math.PI + arcPercent*2*Math.PI);
-        this.canvasCtx.globalAlpha = 1;
-        this.canvasCtx.stroke();  
+        this.canvasCtx.arc(cx + correction, cy, 100, 0.5 * Math.PI, 0.5 * Math.PI + 2 * Math.PI);
+        this.canvasCtx.globalAlpha = 0.1;
+        this.canvasCtx.stroke();
         this.canvasCtx.closePath();
+        this.canvasCtx.globalAlpha = 1;
     };
 
     /**
@@ -311,7 +323,7 @@ class AudioVisualizer {
 
         for (let i = 0; i < barNum; i++) {
             let amplitude = this.frequencyData[i * freqJump];
-            let alfa = (i * 2 * Math.PI ) / maxBarNum;
+            let alfa = (i * 2 * Math.PI) / maxBarNum;
             let beta = (3 * 45 - this.barWidth) * Math.PI / 180;
             let x = 0;
             let y = radius - (amplitude / 12 - this.barHeight);
@@ -327,7 +339,6 @@ class AudioVisualizer {
     };
 }
 
-AudioVisualizer.INTERVAL = null;
 AudioVisualizer.FFT_SIZE = 512;
 AudioVisualizer.TYPE = {
     'lounge': 'renderLounge'
@@ -337,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'use strict';
     let audioVisualizer = new AudioVisualizer({
         autoplay: true,
-        loop: true,
+        loop: false,
         audio: 'myAudio',
         canvas: 'myCanvas',
         style: 'lounge',
