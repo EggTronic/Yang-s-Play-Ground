@@ -90,11 +90,9 @@ class AudioVisualizer {
                     this.sourceNode.disconnect();
                     this.resetTimer();
                     this.isPlaying = false;
-                    this.sourceNode = this.ctx.createBufferSource();
-                    this.sourceNode.connect(this.analyser);
-                    this.sourceNode.connect(this.ctx.destination);
+                    this.setBufferSourceNode();
                 }.bind(this)
-                , 100)
+                , 2000)
 
         }.bind(this);
     };
