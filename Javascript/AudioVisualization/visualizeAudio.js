@@ -86,13 +86,11 @@ class AudioVisualizer {
             setTimeout(
                 function () {
                     clearInterval(this.interval);
-                    
-                    this.sourceNode.disconnect();
-                    this.resetTimer();
+                    //this.sourceNode.disconnect();
                     this.isPlaying = false;
-                    this.setBufferSourceNode();
+                    //this.setBufferSourceNode();
                 }.bind(this)
-                , 2000)
+                , 1500)
 
         }.bind(this);
     };
@@ -172,6 +170,8 @@ class AudioVisualizer {
             this.ctx.resume();
             this.renderFrame();
         } else {
+            this.sourceNode.disconnect();
+            this.setBufferSourceNode();
             this.sourceNode.buffer = buffer;
             this.sourceNode.start(0);
             this.resetTimer();
