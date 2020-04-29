@@ -356,7 +356,14 @@ document.addEventListener('DOMContentLoaded', () => {
         barColor: '#cafdff',
         shadowBlur: 20,
         shadowColor: '#ffffff',
-        font: ['12px', 'Helvetica']
+        font: ['12px', 'Helvetica'],
+        
+        onInitHook: [],
+        onStartHook: [],
+        onPauseHook: [],
+        onContinueHook: [],
+        onFrameHook: [],
+        onEndHook: [],
     })
     audioVisualizer.init();
 }, false);
