@@ -45,8 +45,38 @@ class MyPromise {
     }
 }
 
+MyPromise.all = function (promises) {
+    let result = [];
+    return new MyPromise((res, rej) => {
+        let i = 0;
+        next();
+        function next() {
+            promises[i].then(function(data){
+                i++;
+                result.push(data);
+                if (i === promises.length) {
+                    res(result)
+                } else {
+                    next();
+                }
+            }).catch(function(err){
+                rej(err)
+            })
+        }
+    })
+}
+
+MyPromise.race = function (promises) {
+    return new MyPromise((res, rej) => {
+        for (let i = 0; i < promises.length; i++) {
+            promises[i].then(data => res(data)).catch(err => rej(err));
+        }
+    })
+}
+
 let p = new MyPromise((resolve, reject) => {
     resolve(1)
 })
 
 p.then((data) => console.log(data)).then((data) => console.log(data + 1))
+
